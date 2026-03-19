@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>URL Shortener LAMP</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <section class="hero">
+      <h1>Acortador y monitoreo de URLs</h1>
+      <p>Cree enlaces cortos y consulte sus estadísticas sin recargar la página.</p>
+    </section>
+
+    <section class="card">
+      <h2>Nueva URL</h2>
+
+      <form id="shortenForm">
+        <label for="originalUrl">URL original</label>
+        <input
+          type="url"
+          id="originalUrl"
+          name="originalUrl"
+          placeholder="https://ejemplo.com"
+          required
+        >
+        <button type="submit" id="submitBtn">Acortar URL</button>
+      </form>
+
+      <div id="message" class="message hidden"></div>
+
+      <div id="createdResult" class="result hidden">
+        <h3>URL creada</h3>
+        <p><strong>ID:</strong> <span id="createdId"></span></p>
+        <p><strong>Código:</strong> <span id="createdCode"></span></p>
+        <p><strong>Original:</strong> <span id="createdOriginal"></span></p>
+        <p>
+          <strong>Corta:</strong>
+          <a id="createdShortUrl" href="#" target="_blank" rel="noopener noreferrer"></a>
+        </p>
+        <button type="button" id="copyBtn">Copiar enlace</button>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="section-head">
+        <h2>URLs registradas</h2>
+        <button type="button" id="refreshBtn">Actualizar</button>
+      </div>
+      <div id="listContainer"></div>
+    </section>
+
+    <section id="statsCard" class="card hidden">
+      <div class="section-head">
+        <h2>Estadísticas</h2>
+        <button type="button" id="closeStats" class="secondary">Cerrar</button>
+      </div>
+      <div id="statsContent"></div>
+    </section>
+  </main>
+
+  <script defer src="app.js"></script>
+</body>
+</html>
+
