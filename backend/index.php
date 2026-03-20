@@ -14,9 +14,7 @@ require_once __DIR__ . '/controllers/UrlController.php';
 require_once __DIR__ . '/controllers/RedirectController.php';
 
 // Obtener la ruta
-$request_uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
-$path = preg_replace('#^/backend(?:/index\.php)?#', '', $request_uri);
-$path = rtrim($path, '/');
+$path = rtrim($_SERVER['PATH_INFO'] ?? '/', '/');
 if ($path === '') {
     $path = '/';
 }

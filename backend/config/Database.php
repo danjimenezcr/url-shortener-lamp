@@ -2,8 +2,8 @@
 class Database {
     private $host = "localhost";
     private $db_name = "url_shortener";
-    private $username = "root";
-    private $password = "";
+    private $username = "urlapp";
+    private $password = "Urlapp1234$";
     private $conn = null;
 
     public function getConnection() {
